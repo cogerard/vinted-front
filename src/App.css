@@ -1,0 +1,286 @@
+/* -------------------- */
+/* ------ GENERAL ----- */
+/* -------------------- */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* -------------------- */
+/* ------ HEADER ------ */
+/* -------------------- */
+
+.header-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 10px 0;
+  width: 1280px;
+}
+
+.header-container > div:first-child {
+  cursor: pointer;
+}
+
+.header-logo {
+  height: 40px;
+  /* cursor: pointer; */
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.search-input {
+  background-color: #f5f6f7;
+  border: none;
+  border-radius: 5px;
+  font-family: Maison Neue;
+  font-size: 16px;
+  height: 37px;
+  outline: none;
+  padding-left: 40px;
+  width: 590px;
+}
+
+.search-input-icon {
+  color: #bbb;
+  left: 7px;
+  position: absolute;
+  top: 12px;
+  overflow: visible;
+  width: 1em;
+}
+
+.filters {
+  margin-top: 25px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.filters > span:first-child {
+  margin-right: 10px;
+}
+
+.checkbox {
+  margin-right: 25px;
+}
+
+.checkbox input {
+  display: none;
+  cursor: pointer;
+}
+
+.checkbox .wrapper {
+  align-items: center;
+  background-color: #2cb1ba;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  height: 20px;
+  outline: none;
+  width: 42px;
+}
+
+.checkbox .knob {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid #666;
+  border-radius: 100%;
+  font-weight: 700;
+  height: 16px;
+  left: 0;
+  position: relative;
+  transition: left 0.1s ease-in-out 0s;
+  width: 16px;
+}
+
+.filters > span:last-child {
+  margin-right: 10px;
+}
+
+.slider-container {
+  transform: scale(1);
+  cursor: inherit;
+  height: 36px;
+  display: flex;
+  width: 50%;
+}
+
+.slider-line {
+  height: 5px;
+  width: 100%;
+  border-radius: 4px;
+  background-color: #2cb1ba;
+  align-self: center;
+}
+
+.header-button {
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  font-family: Maison Neue;
+  font-size: 12px;
+  height: 30px;
+  outline: none;
+  width: 115px;
+}
+
+.button-login-signup {
+  background-color: #fff;
+  color: #2cb1ba;
+}
+
+.button-signup {
+  margin-right: 20px;
+}
+
+.button-sold {
+  background-color: #2cb1ba;
+  color: #fff;
+}
+
+/* -------------------- */
+/* ---- HOME PAGE ----- */
+/* -------------------- */
+
+.home-hero {
+  height: 455px;
+  position: relative;
+  width: 100%;
+}
+
+.home-hero-img {
+  /* background-image: url(); */
+  object-fit: cover;
+  height: 455px;
+  position: absolute;
+  width: 100%;
+}
+
+.home-hero-ready-container {
+  margin: auto;
+  width: 1280px;
+}
+
+.home-hero-ready {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 2px hsla(0, 0%, 7%, 0.24);
+  display: flex;
+  flex-direction: column;
+  font-size: 34px;
+  height: 220px;
+  justify-content: center;
+  padding: 25px;
+  position: absolute;
+  top: 75px;
+  width: 360px;
+}
+
+.home-hero-ready button {
+  background-color: #2baeb7;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  height: 45px;
+  margin-top: 32px;
+  padding: 0 14px;
+  width: 187px;
+}
+
+.offer-cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto auto;
+  width: 1280px;
+}
+
+.offer-card {
+  cursor: pointer;
+  box-sizing: content-box;
+  padding: 0 6px 16px;
+  width: 235px;
+}
+
+.offer-card-avatar-username {
+  align-items: center;
+  display: flex;
+  padding: 10px;
+}
+
+.offer-card-avatar-username img {
+  border-radius: 50%;
+  height: 25px;
+  margin-right: 10px;
+  object-fit: cover;
+  width: 25px;
+}
+
+.offer-card-avatar-username span {
+  color: #999;
+  font-size: 12px;
+}
+
+.offer-card-picture-details img {
+  height: 360px;
+  object-fit: cover;
+  width: 235px;
+}
+
+.offer-card-price-size-brand {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.offer-card-price-size-brand span:first-child {
+  font-size: 14px;
+}
+
+.offer-card-price-size-brand span:not(:first-child) {
+  font-size: 14px;
+}
+
+.size,
+.brand {
+  color: #999;
+}
+
+/* -------------------- */
+/* --- OFFER PAGE ----- */
+/* -------------------- */
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
