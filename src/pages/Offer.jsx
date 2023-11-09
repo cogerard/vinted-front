@@ -29,21 +29,51 @@ const Offer = () => {
   return isLoading ? (
     <p>Loading ...</p>
   ) : (
-    <main>
-      <img src={data.product_image.secure_url} alt="" />
-      <p>{data.product_price} €</p>
-      {data.product_details.map((detail) => {
-        console.log(detail);
-        const clefs = Object.keys(detail);
-        console.log(clefs);
-        const clef = clefs[0];
-        console.log(clef);
-        return (
-          <p key={clef}>
-            {clef} : {detail[clef]}
-          </p>
-        );
-      })}
+    <main className="offer-body">
+      <div className="offer-container">
+        <div>
+          <img
+            className="offer-picture"
+            src={data.product_image.secure_url}
+            alt="offer-picture"
+          />
+        </div>
+        <div className="offer-infos">
+          <div className="offer-infos-top">
+            <span className="offer-price">{data.product_price} €</span>
+            <ul className="offer-infos-list">
+              {data.product_details.map((detail) => {
+                // console.log(detail);
+                const clefs = Object.keys(detail);
+                console.log(clefs);
+                const clef = clefs[0];
+                console.log(clef);
+                return (
+                  <li key={clef}>
+                    <span>{clef}</span>
+                    <span>{detail[clef]}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div className="divider"></div>
+          <div className="offer-content">
+            <p className="name">{data.product_name}</p>
+            <p className="description">{data.product_description}</p>
+            <div className="offer-avatar-username">
+              {data.owner.account.avatar && (
+                <img
+                  src={data.owner.account.avatar.secure_url}
+                  alt="owner avatar"
+                />
+              )}
+              <span>{data.owner.account.username}</span>
+            </div>
+          </div>
+          <button>Acheter</button>
+        </div>
+      </div>
     </main>
   );
 };
