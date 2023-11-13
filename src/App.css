@@ -555,6 +555,7 @@ form {
   border-bottom: 1px solid #ebedee;
   height: 25px;
   vertical-align: center;
+  box-sizing: content-box;
 }
 
 .text-input {
