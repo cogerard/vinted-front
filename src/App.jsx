@@ -1,28 +1,39 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
+import { useState } from "react";
 
 // Pages
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Publish from "./pages/Publish";
 
 // Components
 import Header from "./components/Header";
 
 function App() {
+  const [token, setToken] = useState(Cookies.get("token") || null);
+
+  const handleToken = (token) => {
+    if (token) {
+      Cookies.set("token", token, { expires: 15 });
+      setToken(token);
+    } else {
+      Cookies.remove("token");
+      setToken(null);
+    }
+  };
   return (
     <Router>
-      {/* Mon Header apparait sur toutes les pages */}
-      <Header />
-      {/* Le composant Routes doit contenir toutes mes routes, il affiche un seul de ses enfants à la fois */}
+      <Header token={token} handleToken={handleToken} />
       <Routes>
-        {/* path=chemin element=le composant à afficher si l'url correspond au chemin */}
         <Route path="/" element={<Home />} />
         <Route path="/offers/:id" element={<Offer />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/signup" element={<Signup handleToken={handleToken} />} />
+        <Route path="login" element={<Login handleToken={handleToken} />} />
+        <Route path="publish" element={<Publish token={token} />} />
       </Routes>
     </Router>
   );

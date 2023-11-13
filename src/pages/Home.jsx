@@ -37,7 +37,11 @@ const Home = () => {
         <div className="home-hero-ready-container">
           <div className="home-hero-ready">
             <div>Prêts à faire du tri dans vos placards ?</div>
-            <button>Commencer à vendre</button>
+            <Link to={`/publish`}>
+              <button className="header-button button-sold">
+                Commencer à vendre
+              </button>
+            </Link>
           </div>
         </div>
       </section>

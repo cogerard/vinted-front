@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ token, handleToken }) => {
   return (
     <div className="header-container">
       <Link to={`/`}>
@@ -39,19 +39,34 @@ const Header = () => {
           </div>
         </div> */}
       </div>
-      <div>
-        <Link to={`/signup`}>
-          <button className="header-button button-login-signup button-signup">
-            S'inscrire
-          </button>
-        </Link>
-        <Link to={`/login`}>
-          <button className="header-button button-login-signup">
-            Se connecter
-          </button>
-        </Link>
-      </div>
-      <button className="header-button button-sold">Vends tes articles</button>
+      {token ? (
+        <button
+          className="header-button button-logout"
+          onClick={() => {
+            handleToken(null);
+          }}
+        >
+          Se déconnecter
+        </button>
+      ) : (
+        <div>
+          <Link to={`/signup`}>
+            <button className="header-button button-login-signup button-signup">
+              S'inscrire
+            </button>
+          </Link>
+          <Link to={`/login`}>
+            <button className="header-button button-login-signup">
+              Se connecter
+            </button>
+          </Link>
+        </div>
+      )}
+      <Link to={`/publish`}>
+        <button className="header-button button-sold">
+          Vends tes articles
+        </button>
+      </Link>
     </div>
   );
 };
