@@ -26,16 +26,35 @@ function App() {
       setToken(null);
     }
   };
+
+  const [id, setId] = useState(Cookies.get("id") || null);
+
+  const handleId = (id) => {
+    if (id) {
+      Cookies.set("id", id, { expires: 15 });
+      setId(id);
+    } else {
+      Cookies.remove("id");
+      setId(null);
+    }
+  };
+
   return (
     <Router>
       <Header token={token} handleToken={handleToken} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offers/:id" element={<Offer />} />
-        <Route path="/signup" element={<Signup handleToken={handleToken} />} />
-        <Route path="/login" element={<Login handleToken={handleToken} />} />
+        <Route
+          path="/signup"
+          element={<Signup handleToken={handleToken} handleId={handleId} />}
+        />
+        <Route
+          path="/login"
+          element={<Login handleToken={handleToken} handleId={handleId} />}
+        />
         <Route path="/publish" element={<Publish token={token} />} />
-        <Route path="/payment" element={<Payment token={token} />} />
+        <Route path="/payment" element={<Payment id={id} />} />
       </Routes>
     </Router>
   );

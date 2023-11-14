@@ -3,8 +3,8 @@ import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Signup = ({ handleToken }) => {
-  const [username, setUsername] = useState("");
+const Signup = ({ handleToken, handleId }) => {
+  const [id, setId] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
@@ -19,9 +19,10 @@ const Signup = ({ handleToken }) => {
       setErrorMessage("");
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-        { email, username, password, newsletter }
+        { email, id, password, newsletter }
       );
       handleToken(response.data.token);
+      handleId(response.data._id);
       navigate("/");
       console.log(response.data);
     } catch (error) {
@@ -44,7 +45,7 @@ const Signup = ({ handleToken }) => {
             type="text"
             placeholder="Nom d'utilisateur"
             onChange={(event) => {
-              setUsername(event.target.value);
+              setId(event.target.value);
             }}
           />
           <input

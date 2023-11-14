@@ -1,9 +1,9 @@
 import "../App.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const Login = ({ handleToken }) => {
+const Login = ({ handleToken, handleId }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,6 +21,7 @@ const Login = ({ handleToken }) => {
       );
       console.log(response.data);
       handleToken(response.data.token);
+      handleId(response.data._id);
       navigate("/");
     } catch (error) {
       console.log(error);
