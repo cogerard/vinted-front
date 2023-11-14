@@ -19,25 +19,6 @@ const Header = ({ token, handleToken }) => {
           placeholder="Recherche des articles"
         />
         <i className="fa-solid fa-magnifying-glass search-input-icon"></i>
-        {/* <div className="filter-container">
-          <div className="filters">
-            <span>Trier par prix</span>
-            <span className="checkbox">
-              <input type="checkbox" name="price" />
-              <div className="wrapper">
-                <div className="knob">
-                  <span>⇡</span>
-                </div>
-              </div>
-            </span>
-            <span>Prix entre :</span>
-            <div className="slider-container">
-              <div className="slider-line">
-                <div> SLIDER </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
       {token ? (
         <button

@@ -3,8 +3,6 @@
 /* -------------------- */
 
 body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0;
@@ -43,7 +41,6 @@ a {
 
 .header-logo {
   height: 40px;
-  /* cursor: pointer; */
 }
 
 .search-container {
@@ -56,10 +53,8 @@ a {
   background-color: #f5f6f7;
   border: none;
   border-radius: 5px;
-  font-family: Maison Neue;
   font-size: 16px;
   height: 37px;
-  outline: none;
   padding-left: 40px;
   width: 590px;
 }
@@ -69,83 +64,13 @@ a {
   left: 7px;
   position: absolute;
   top: 12px;
-  overflow: visible;
-  width: 1em;
-}
-
-.filters {
-  margin-top: 25px;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-}
-
-.filters > span:first-child {
-  margin-right: 10px;
-}
-
-.checkbox {
-  margin-right: 25px;
-}
-
-.checkbox input {
-  display: none;
-  cursor: pointer;
-}
-
-.checkbox .wrapper {
-  align-items: center;
-  background-color: #2cb1ba;
-  border-radius: 10px;
-  cursor: pointer;
-  display: inline-flex;
-  height: 20px;
-  outline: none;
-  width: 42px;
-}
-
-.checkbox .knob {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background-color: #fff;
-  border: 1px solid #666;
-  border-radius: 100%;
-  font-weight: 700;
-  height: 16px;
-  left: 0;
-  position: relative;
-  transition: left 0.1s ease-in-out 0s;
-  width: 16px;
-}
-
-.filters > span:last-child {
-  margin-right: 10px;
-}
-
-.slider-container {
-  transform: scale(1);
-  cursor: inherit;
-  height: 36px;
-  display: flex;
-  width: 50%;
-}
-
-.slider-line {
-  height: 5px;
-  width: 100%;
-  border-radius: 4px;
-  background-color: #2cb1ba;
-  align-self: center;
 }
 
 .header-button {
   border: 1px solid #2cb1ba;
   border-radius: 5px;
-  font-family: Maison Neue;
   font-size: 12px;
   height: 30px;
-  outline: none;
   width: 115px;
 }
 
@@ -160,13 +85,11 @@ a {
 
 .button-logout {
   background-color: #c2175b;
-  border: none;
   border-radius: 5px;
   color: #fff;
-  font-family: Maison Neue;
   font-size: 12px;
   height: 30px;
-  outline: none;
+  border: none;
 }
 
 .button-sold {
@@ -185,7 +108,6 @@ a {
 }
 
 .home-hero-img {
-  /* background-image: url(); */
   object-fit: cover;
   height: 455px;
   position: absolute;
@@ -200,7 +122,6 @@ a {
 .home-hero-ready {
   background-color: #fff;
   border-radius: 3px;
-  box-shadow: 0 0 2px hsla(0, 0%, 7%, 0.24);
   display: flex;
   flex-direction: column;
   font-size: 34px;
@@ -214,7 +135,6 @@ a {
 
 .home-hero-ready button {
   background-color: #2baeb7;
-  border: none;
   border-radius: 4px;
   color: #fff;
   font-size: 16px;
@@ -269,11 +189,7 @@ a {
   padding: 8px;
 }
 
-.offer-card-price-size-brand span:first-child {
-  font-size: 14px;
-}
-
-.offer-card-price-size-brand span:not(:first-child) {
+.offer-card-price-size-brand span {
   font-size: 14px;
 }
 
@@ -322,30 +238,19 @@ a {
 }
 
 .offer-infos-list {
-  list-style-type: none;
-  padding: 0;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  padding: 20px 0;
 }
 
 .offer-infos-list li {
   display: flex;
-  padding: 2px 0;
+  padding: 4px 0;
+  justify-content: space-between;
 }
 
 .offer-infos-list span {
-  flex: 1 1;
   font-size: 14px;
   text-transform: uppercase;
-}
-
-.offer-infos-list span:nth-child(odd) {
   color: #999;
-}
-
-.offer-infos-list span:nth-child(2n) {
-  color: #666;
-  font-weight: 700;
 }
 
 .divider {
@@ -356,9 +261,7 @@ a {
 }
 
 p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
+  padding: 15px 0;
 }
 
 .offer-content .name {
@@ -384,7 +287,7 @@ p {
 
 .offer-infos button {
   background: #09b1ba;
-  border: 1px solid #09b1ba;
+  border: none;
   border-radius: 4px;
   color: #fff;
   font-size: 16px;
@@ -416,7 +319,7 @@ p {
 
 .signup-form > input {
   border: none;
-  border-bottom: 1px solid #fcced3;
+  border-bottom: 1px solid #999;
   height: 35px;
   margin-bottom: 20px;
 }
@@ -432,7 +335,6 @@ p {
 
 .signup-form input[type="checkbox"] {
   margin-right: 20px;
-  -webkit-transform: scale(2);
   transform: scale(2);
   cursor: pointer;
 }
@@ -455,7 +357,6 @@ p {
   font-size: 16px;
   height: 45px;
   margin-top: 20px;
-  outline: none;
   width: 100%;
 }
 
@@ -479,14 +380,8 @@ p {
 }
 
 .publish-main h2 {
-  font-family: Maison Neue;
   font-size: 24px;
   padding-top: 40px;
-}
-
-form {
-  display: block;
-  margin-top: 0em;
 }
 
 .file-select {
@@ -554,7 +449,7 @@ form {
 
 .text-input-section {
   background-color: #fff;
-  box-shadow: 0 0 2px gray;
+  border: solid 1px lightgrey;
   margin: 20px 0;
 }
 
@@ -581,7 +476,6 @@ form {
   border: none;
   border-bottom: 1px solid #ebedee;
   color: #000;
-  font-family: Maison Neue;
   font-size: 16px;
   width: 50%;
 }
@@ -607,7 +501,7 @@ form {
 
 .payment-wrapper {
   background: #ebedee;
-  height: calc(100vh - 59px);
+  height: calc(100vh - 50px);
 }
 
 .payment-container {
@@ -672,16 +566,14 @@ form {
 
 .stripe-submit {
   background: #00c06d;
-  border: 1px solid;
-  border-color: #00c06d;
+  border: none;
   border-radius: 4px;
   color: #fff;
-  display: block;
   font-size: 16px;
   height: 44px;
   line-height: 22px;
   margin-top: 8px;
   padding: 0 14px;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 25px;
 }
