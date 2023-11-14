@@ -496,6 +496,19 @@ form {
   padding: 24px;
 }
 
+.dashed-preview-image {
+  align-items: center;
+  border: 1px dashed #ebedee;
+  border-radius: 3px;
+  display: flex;
+  height: 200px;
+}
+
+.dashed-preview-image img {
+  height: 90%;
+  margin: 0 10px;
+}
+
 .dashed-preview-without {
   align-items: center;
   border: 1px dashed #ebedee;
@@ -536,7 +549,7 @@ form {
 }
 
 .input-file {
-  /* display: none; */
+  display: none;
 }
 
 .text-input-section {

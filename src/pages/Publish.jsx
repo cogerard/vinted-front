@@ -13,7 +13,6 @@ const Publish = ({ token }) => {
   const [brand, setBrand] = useState("");
   const [size, setSize] = useState("");
   const [color, setColor] = useState("");
-  //   const [pictureFromCloudinary, setPictureFromCloudinary] = useState();
 
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -48,7 +47,6 @@ const Publish = ({ token }) => {
 
       console.log(response);
       navigate("/");
-      //   setPictureFromCloudinary(response.data.secure_url);
     } catch (error) {
       console.log(error);
       if (error.response.status === 400) {
@@ -66,25 +64,31 @@ const Publish = ({ token }) => {
 
             <form onSubmit={handleSubmit}>
               <section className="file-select">
-                {/* test affichage image */}
-                {/* {pictureFromCloudinary && (
-              <img src={pictureFromCloudinary} alt="test" />
-            )} */}
-                <div className="dashed-preview-without">
-                  <div className="input-design-default">
-                    <label htmlFor="file" className="label-file">
-                      <span className="input-sign">+</span>
-                      <span>Ajoute une photo</span>
-                    </label>
-                    <input
-                      className="input-file"
-                      type="file"
-                      onChange={(event) => {
-                        setPicture(event.target.files[0]);
-                      }}
+                {picture ? (
+                  <div className="dashed-preview-image">
+                    <img
+                      src={URL.createObjectURL(picture)}
+                      alt="item to sell"
                     />
                   </div>
-                </div>
+                ) : (
+                  <div className="dashed-preview-without">
+                    <div className="input-design-default">
+                      <label htmlFor="file" className="label-file">
+                        <span className="input-sign">+</span>
+                        <span>Ajoute une photo</span>
+                      </label>
+                      <input
+                        className="input-file"
+                        id="file"
+                        type="file"
+                        onChange={(event) => {
+                          setPicture(event.target.files[0]);
+                        }}
+                      />
+                    </div>
+                  </div>
+                )}
               </section>
               <section className="text-input-section">
                 <div className="text-input">
